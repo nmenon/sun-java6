@@ -3,7 +3,7 @@ Section: non-free/java
 Priority: optional
 Maintainer: Janusz Dziemidowicz <rraptorr@nails.eu.org>
 Homepage: http://www.oracle.com/technetwork/java/javase/downloads/index.html
-Build-Depends: debhelper (>= 6), lsb-release, unzip, bzip2, patch, libasound2, unixodbc, libx11-6, libxext6, libxi6, libxt6, libxtst6, lib32asound2 [amd64], ia32-libs [amd64]
+Build-Depends: debhelper (>= 6), lsb-release, unzip, bzip2, patch, libasound2, unixodbc, libx11-6, libxext6, libxi6, libxt6, libxtst6, libasound2:i386 [amd64], libstdc++6:i386 [amd64],lib32z1 [amd64],lib32ncurses5 [amd64],lib32bz2-1.0 [amd64],libxext6:i386 [amd64],libxrender1:i386 [amd64],libxtst6:i386 [amd64],libxi6:i386 [amd64]
 Standards-Version: 3.9.3
 
 Package: sun-java6-jre
@@ -61,8 +61,8 @@ Description: Java(TM) Plug-in, Java SE 6
 Package: ia32-sun-java6-bin
 Section: non-free/java
 Architecture: amd64
-Depends: sun-java6-jre (>= ${source:Version}), ia32-libs, ${shlibs:Depends}, ${odbc:Depends}, ${misc:Depends}
-Recommends: ${shlibs:Recommends}, ia32-libs-gtk
+Depends: sun-java6-jre (>= ${source:Version}), libstdc++6:i386 lib32z1 lib32ncurses5 lib32bz2-1.0 libxext6:i386 libxrender1:i386 libxtst6:i386 libxi6:i386, ${shlibs:Depends}, ${odbc:Depends}, ${misc:Depends}
+Recommends: ${shlibs:Recommends}, libs-gtk:i386
 Description: Sun Java(TM) Runtime Environment (JRE) 6 (32-bit)
  The Sun Java Platform Standard Edition Runtime Environment (JRE) 6
  contains the Java virtual machine, runtime class libraries, and 
